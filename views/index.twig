@@ -4,7 +4,7 @@
   <section>
     <h2>Auto Tag / Tag</h2>
     {% include 'autotag.twig' with {
-      allowBlank:false,
+      allowBlank:true,
       options:[{
         title:'Black'
       },{
@@ -30,7 +30,10 @@
 
   <section>
     <h2>Date</h2>
-    {% include 'date.twig' %}
+    {% include 'date.twig' with {
+      min:'2013-12-25',
+      max:'2016-12-25'
+    } %}
   </section>
 
   <section>
@@ -46,10 +49,11 @@
 
   <section>
     <h2>Phone Number</h2>
-    {% include 'input.twig' with {
+    {% include 'labeledinput.twig' with {
+      id:'tel',
       name:'tel',
       type:'tel',
-      label:'Phone Number'
+      label:'Cell'
     } %}
   </section>
 
@@ -138,7 +142,56 @@
   <section>
     <h2>Radio Options</h2>
     {% include 'radios.twig' with {
-      legend:'Legend'
+      legend:'Options',
+      options:[{
+        for: 'option_a',
+        id: 'option_a',
+        name: 'radio',
+        label: 'Option A',
+        type: 'radio'
+      },{
+        for: 'option_b',
+        id: 'option_b',
+        name: 'radio',
+        label: 'Option B',
+        type: 'radio'
+      },{
+        for: 'option_c',
+        id: 'option_c',
+        name: 'radio',
+        label: 'Option C',
+        type: 'radio'
+      },{
+        for: 'option_d',
+        id: 'option_d',
+        name: 'radio',
+        label: 'Option D',
+        type: 'radio'
+      },{
+        for: 'option_d',
+        id: 'option_d',
+        name: 'radio',
+        label: 'Option D',
+        type: 'radio'
+      },{
+        for: 'option_e',
+        id: 'option_f',
+        name: 'radio',
+        label: 'Option F',
+        type: 'radio'
+      },{
+        for: 'option_g',
+        id: 'option_g',
+        name: 'radio',
+        label: 'Option G',
+        type: 'radio'
+      },{
+        for: 'option_h',
+        id: 'option_h',
+        name: 'radio',
+        label: 'Option H',
+        type: 'radio'
+      }]
     } %}
   </section>
 
@@ -161,6 +214,17 @@
   <section>
     <h2>Rich Text</h2>
     {% include 'richtext.twig' %}
+  </section>
+
+  <section>
+    <h2>JSON</h2>
+    <div class="jsonarea">
+      {% include 'richtext.twig' with {
+        id: "json",
+        name: "json"
+      } only %}
+      <p hidden class="status"></p>
+    </div>
   </section>
 
   <section>
@@ -190,12 +254,30 @@
 
 
 
-  <script defer src="./assets/js/m5.input.js"></script>
-  <script defer src="./assets/js/m5.autotag.js"></script>
+  <script defer src="./assets/components/m5/js/m5.input.js"></script>
+  <script defer src="./assets/components/m5/js/m5.autotag.js"></script>
+
+  <script defer src="./assets/components/JSONarea/js/JSONArea.js"></script>
 
   <script defer>
     document.addEventListener('DOMContentLoaded', function() {
       const autoTag = new M5AutoTag(document.getElementById('auto-tag'));
+    });
+  </script>
+
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function() {
+      const jsonAreas = document.querySelectorAll('.jsonarea');
+      for(let i = 0; i < jsonAreas.length; i++) {
+        const jsonAreaWrapper = jsonAreas[i],
+        jsonArea = new JSONArea(jsonAreaWrapper.querySelector('textarea')),
+        status = jsonAreaWrapper.querySelector('.status');
+
+        jsonArea.getElement().addEventListener('update', function(e) {
+          status.removeAttribute('hidden');
+          status.innerHTML = (e.detail.isJSON) ? 'Valid JSON' : 'Invalid JSON';
+        });
+      }
     });
   </script>
 

@@ -1,2 +1,8 @@
 <label for="date">Date</label>
-<input type="{{type|default('date')}}"{% if not allowBlank|default(true) %} required{% endif %}{% if min %} min="{{min}}"{% endif %}{% if max %} max="{{max}}"{% endif %}>
+{% include 'input.twig' with {
+  type: 'date',
+  id: 'date',
+  name: 'date',
+  max: max,
+  min: min
+} %}

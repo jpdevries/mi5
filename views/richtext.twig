@@ -1,2 +1,2 @@
-<label for="content">Content</label><br>
-<textarea name="content" id="content"{% if not allowBlank|default(true) %} required{% endif %}></textarea>
+<label for="{{id|default('content')}}">{{label|default('Content')}}</label><br>
+<textarea name="{{name|default('content')}}" id="{{id|default('content')}}"{% if not allowBlank|default(true) %} required{% endif %}></textarea>

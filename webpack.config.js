@@ -7,7 +7,7 @@ module.exports = {
     'autotag': './_build/js/m5.autotag.js'
   },
   output: {
-    path: './assets/js/',
+    path: './assets/components/m5/js/',
     filename: "m5.[name].js",
     libraryTarget: 'umd'
   },

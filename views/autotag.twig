@@ -1,6 +1,12 @@
 <div id="auto-tag">
   <label for="tags">Tags</label>
-  <input type="text" id="tags" name="tags"{% if not allowBlank|default(true) %} required{% endif %}>
+  {% if not allowBlank|default(true) %}{% set required = true %}{% else %}{% set required = false %}{% endif %}
+  {% include 'twag/input.twig' with {
+    id:'tags',
+    name:'tags',
+    required:required,
+    type:'text'
+  } %}
   {% if options.length %}
     <div class="auto-tags">
     {% for tag in options %}
