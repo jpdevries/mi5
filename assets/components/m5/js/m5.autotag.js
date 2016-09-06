@@ -82,7 +82,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    _classCallCheck(this, M5AutoTag);
 
 	    var _this = _possibleConstructorReturn(this, (M5AutoTag.__proto__ || Object.getPrototypeOf(M5AutoTag)).call(this, element, {
-	      caseSensitive: true,
+	      caseSensitive: false,
 	      separator: ',',
 	      inputSelector: 'input[type="text"]',
 	      tagsHolder: '.auto-tags'

@@ -3,7 +3,7 @@ const M5Input = require('m5.input');
 export class M5AutoTag extends M5Input {
   constructor(element = undefined, opts = {}) {
     super(element, {
-      caseSensitive: true,
+      caseSensitive: false,
       separator: ',',
       inputSelector: 'input[type="text"]',
       tagsHolder: '.auto-tags'
