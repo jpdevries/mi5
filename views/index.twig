@@ -1,0 +1,203 @@
+{% include 'header.twig' with { loadStyles:true } %}
+</head>
+<body>
+  <section>
+    <h2>Auto Tag / Tag</h2>
+    {% include 'autotag.twig' with {
+      allowBlank:false,
+      options:[{
+        title:'Black'
+      },{
+        title:'Gold'
+      },{
+        title:'Silver'
+      }]
+    } %}
+  </section>
+
+  <section>
+    <h2>Checkboxes</h2>
+    {% include 'checkbox.twig' with {
+      options:[{
+        title:'Black'
+      },{
+        title:'Gold'
+      },{
+        title:'Silver'
+      }]
+    } %}
+  </section>
+
+  <section>
+    <h2>Date</h2>
+    {% include 'date.twig' %}
+  </section>
+
+  <section>
+    <h2>Time</h2>
+    {% include 'time.twig' %}
+  </section>
+
+  <section>
+    <h2>Date Time</h2>
+    {% include 'date.twig' %}
+    {% include 'time.twig' %}
+  </section>
+
+  <section>
+    <h2>Phone Number</h2>
+    {% include 'input.twig' with {
+      name:'tel',
+      type:'tel',
+      label:'Phone Number'
+    } %}
+  </section>
+
+  <section>
+    <h2>Month</h2>
+    {% include 'date.twig' with {
+      type:'month'
+    } %}
+  </section>
+
+  <section>
+    <h2>Week</h2>
+    {% include 'date.twig' with {
+      type:'week'
+    } %}
+  </section>
+
+  <section>
+    <h2>DropDown List Menu</h2>
+    {% include 'dropdown-list-menu.twig' with {
+      options:[{
+        title:'MODX',
+        value:'modx'
+      },{
+        title:'Wordpress',
+        value:'wordpress'
+      },{
+        title:'Joomla!',
+        value:'joomla!'
+      }]
+    } %}
+  </section>
+
+  <section>
+    <h2>Email</h2>
+    {% include 'email.twig' with {
+    maxLength: undefined,
+    options:[{
+      title:'mail@devries.jp'
+    },{
+      title:'johnpaul.devries@gmail.com'
+    }]
+    } %}
+  </section>
+
+  <section>
+    <h2>File</h2>
+    {% include 'file.twig' %}
+  </section>
+
+  <section hidden>
+    <h2>Hidden</h2>
+    {% include 'hidden.twig' %}
+  </section>
+
+  <section>
+    <h2>Image</h2>
+    {% include 'file.twig' with {
+      label:"Choose an image",
+      name:"image",
+      accept:"image/*"
+    } %}
+  </section>
+
+  <section>
+    <h2>Listbox (Single&ndash;Select)</h2>
+    {% include 'datalist.twig' %}
+  </section>
+
+  <section>
+    <h2>Listbox (Multi&ndash;Select)</h2>
+    {% include 'listbox-multi.twig' %}
+  </section>
+
+  <section>
+    <h2>Number</h2>
+    {% include 'number.twig' with {
+      options:[{
+        title:4
+      },{
+        title:20
+      }]
+    } %}
+  </section>
+
+  <section>
+    <h2>Radio Options</h2>
+    {% include 'radios.twig' with {
+      legend:'Legend'
+    } %}
+  </section>
+
+  <section>
+    <h2>Resource List</h2>
+    {% include 'dropdown-list-menu.twig' with {
+      options:[{
+        title:'MODX',
+        value:'modx'
+      },{
+        title:'Wordpress',
+        value:'wordpress'
+      },{
+        title:'Joomla!',
+        value:'joomla!'
+      }]
+    } %}
+  </section>
+
+  <section>
+    <h2>Rich Text</h2>
+    {% include 'richtext.twig' %}
+  </section>
+
+  <section>
+    <h2>URL</h2>
+    {% include 'url.twig' with {
+      options:[{
+        title:'http://google.com'
+      },{
+        title:'http://facebook.com'
+      }]
+    } %}
+  </section>
+
+  <section>
+    <h2>Slider</h2>
+    {% include 'slider.twig' with {
+      min:0,
+      max:200,
+      step:1,
+      options:[{
+        title:100
+      },{
+      title:150
+      }]
+    } %}
+  </section>
+
+
+
+  <script defer src="./assets/js/m5.input.js"></script>
+  <script defer src="./assets/js/m5.autotag.js"></script>
+
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function() {
+      const autoTag = new M5AutoTag(document.getElementById('auto-tag'));
+    });
+  </script>
+
+</body>
+</html>

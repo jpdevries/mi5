@@ -1,0 +1,8 @@
+<select name="options" id="options"{% if not allowBlank|default(true) %} required{% endif %}>
+  {% if allowBlank|default(true) %}<option value=""></option>{% endif %}
+  {% if options.length %}
+    {% for option in options %}
+      <option {% if option.value %} value="{{option.value}}"{% endif %}>{{option.title}}</option>
+    {% endfor %}
+  {% endif %}
+</select>

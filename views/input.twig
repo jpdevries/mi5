@@ -1,0 +1,6 @@
+<input type="{{type|default('text')}}" id="{{name|default('input')}}" name="{{name|default('input')}}"
+  {% if not allowBlank|default(true) %} required
+  {% endif %}{% if size %} size="{{size}}"{% endif %}
+  {% if maxlength %} maxlength="{{maxlength}}"{% endif %}
+  {% if pattern %} pattern="{{pattern}}"{% endif %}
+>

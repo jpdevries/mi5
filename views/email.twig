@@ -1,0 +1,9 @@
+<label for="email">Email</label>
+<input type="email" name="email" id="email"{% if options.length %} list="email_list"{% endif %}{% if not allowBlank|default(true) %} required{% endif %}{% if maxLength %} maxLength="{{maxLength}}"{% endif %}>
+{% if options.length %}
+  <datalist id="email_list">
+  {% for option in options %}
+    <option>{{option.title}}</option>
+  {% endfor %}
+  </datalist>
+{% endif %}

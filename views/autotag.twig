@@ -1,0 +1,13 @@
+<div id="auto-tag">
+  <label for="tags">Tags</label>
+  <input type="text" id="tags" name="tags"{% if not allowBlank|default(true) %} required{% endif %}>
+  {% if options.length %}
+    <div class="auto-tags">
+    {% for tag in options %}
+      <span class="tag">
+        <input type="checkbox" id="tag__{{tag.title|e('css')}}" name="tag__{{tag.title|e('css')}}" value="{{value|default(tag.title|e('css'))}}"> <label for="{{tag.title|e('css')}}">{{tag.title}} </label>
+      </span>
+    {% endfor %}
+    </div>
+  {% endif %}
+</div>
