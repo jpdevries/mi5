@@ -1,6 +1,6 @@
 <label for="date">Date</label>
 {% include 'input.twig' with {
-  type: 'date',
+  type: type|default('date'),
   id: 'date',
   name: 'date',
   max: max,
