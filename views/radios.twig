@@ -2,7 +2,8 @@
   <legend>{{legend|default('Options')}}</legend>
   <div class="options container">
     {% for option in options %}
-      <div class="option">{% include 'labeledinput.twig' with option only %}</div>
+      {% set option = option|merge({'inputFirst': true}) %}
+      <div class="option yolo">{% include 'labeledinput.twig' with option only %}</div>
     {% endfor %}
   </div>
 </fieldset>
