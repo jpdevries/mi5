@@ -1,8 +1,5 @@
-<label for="date">Date</label>
-{% include 'input.twig' with {
-  type: type|default('date'),
-  id: 'date',
-  name: 'date',
-  max: max,
-  min: min
-} %}
+{% include 'labeledinput.twig' with {
+  label: label|default('Date'),
+  id: id|default('date'),
+  name: name|default('date')
+} only %}

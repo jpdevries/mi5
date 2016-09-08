@@ -1,5 +1,5 @@
 <label for="quantity">Quantity</label>
-<input type="number" name="quantity" {% if min %} min="{{min}}"{% endif %}{% if max %} max="{{max}}"{% endif %}{% if options.length %} list="quantity_list"{% endif %}{% if not allowBlank|default(true) %} required{% endif %}>
+<input type="number" id="quantity" name="quantity" {% if min %} min="{{min}}"{% endif %}{% if max %} max="{{max}}"{% endif %}{% if options.length %} list="quantity_list"{% endif %}{% if not allowBlank|default(true) %} required{% endif %}>
 {% if options.length %}
   <datalist id="quantity_list">
   {% for option in options %}

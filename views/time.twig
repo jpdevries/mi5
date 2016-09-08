@@ -1,2 +1,5 @@
-<label for="time">Time</label>
-<input type="time"{% if not allowBlank|default(true) %} required{% endif %}>
+{% include 'labeledinput.twig' with {
+  label: label|default('Time'),
+  id: id|default('time'),
+  name: name|default('time')
+} only %}

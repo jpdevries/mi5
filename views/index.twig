@@ -43,8 +43,14 @@
 
   <section>
     <h2>Date Time</h2>
-    {% include 'date.twig' %}
-    {% include 'time.twig' %}
+    {% include 'date.twig' with {
+      id: 'date-2',
+      name: 'date-2'
+    } only %}
+    {% include 'time.twig' with {
+      id: 'time-2',
+      name: 'time-2'
+    } only %}
   </section>
 
   <section>
@@ -60,14 +66,20 @@
   <section>
     <h2>Month</h2>
     {% include 'date.twig' with {
-      type:'month'
+      type:'month',
+      id: 'month',
+      name: 'month',
+      label: 'Month'
     } %}
   </section>
 
   <section>
     <h2>Week</h2>
     {% include 'date.twig' with {
-      type:'week'
+      type:'week',
+      id: 'week',
+      name: 'week',
+      label: 'Week'
     } %}
   </section>
 
@@ -198,6 +210,9 @@
   <section>
     <h2>Resource List</h2>
     {% include 'dropdown-list-menu.twig' with {
+      id: 'resource-list',
+      name: 'resource-list',
+      label: 'Resource List',
       options:[{
         title:'MODX',
         value:'modx'

@@ -1,4 +1,5 @@
-<select name="options" id="options"{% if not allowBlank|default(true) %} required{% endif %}>
+<label for="{{id|default('options')}}">{{label|default('Dropdown List Menu')}}</label>
+<select name="{{name|default('options')}}" id="{{id|default('options')}}"{% if not allowBlank|default(true) %} required{% endif %}>
   {% if allowBlank|default(true) %}<option value=""></option>{% endif %}
   {% if options.length %}
     {% for option in options %}
