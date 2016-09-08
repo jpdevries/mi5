@@ -43,21 +43,21 @@
   <section>
     <h2>Date</h2>
     <label for="date">Date</label>
-<input id="date" max="2016-12-25" min="2013-12-25" name="date" type="date">
+<input id="date" name="date">
   </section>
 
   <section>
     <h2>Time</h2>
     <label for="time">Time</label>
-<input type="time">
+<input id="time" name="time">
   </section>
 
   <section>
     <h2>Date Time</h2>
-    <label for="date">Date</label>
-<input id="date" name="date" type="date">
-    <label for="time">Time</label>
-<input type="time">
+    <label for="date-2">Date</label>
+<input id="date-2" name="date-2">
+    <label for="time-2">Time</label>
+<input id="time-2" name="time-2">
   </section>
 
   <section>
@@ -68,19 +68,20 @@
 
   <section>
     <h2>Month</h2>
-    <label for="date">Date</label>
-<input id="date" name="date" type="month">
+    <label for="month">Month</label>
+<input id="month" name="month">
   </section>
 
   <section>
     <h2>Week</h2>
-    <label for="date">Date</label>
-<input id="date" name="date" type="week">
+    <label for="week">Week</label>
+<input id="week" name="week">
   </section>
 
   <section>
     <h2>DropDown List Menu</h2>
-    <select name="options" id="options">
+    <label for="options">Dropdown List Menu</label>
+<select name="options" id="options">
   <option value=""></option>            <option  value="modx">MODX</option>
           <option  value="wordpress">Wordpress</option>
           <option  value="joomla!">Joomla!</option>
@@ -372,7 +373,8 @@
 
   <section>
     <h2>Listbox (Multi&ndash;Select)</h2>
-    <select name="listbox-multi" id="listbox-multi" multiple>
+    <label for="listbox-multi">Listbox (Multi-Select)</label>
+<select name="listbox-multi" id="listbox-multi" multiple>
   <option value="1">option1</option>
   <option value="2">option2</option>
   <option value="3">option3</option>
@@ -382,7 +384,7 @@
   <section>
     <h2>Number</h2>
     <label for="quantity">Quantity</label>
-<input type="number" name="quantity"  list="quantity_list">
+<input type="number" id="quantity" name="quantity"  list="quantity_list">
   <datalist id="quantity_list">
       <option>4</option>
       <option>20</option>
@@ -394,29 +396,29 @@
     <fieldset>
   <legend>Options</legend>
   <div class="options container">
-                <div class="option yolo"><input id="option_a" name="radio" type="radio">
-<label for="radio">Option A</label>
+                <div class="option"><input id="option_a" name="radio" type="radio">
+<label for="option_a">Option A</label>
 </div>
-                <div class="option yolo"><input id="option_b" name="radio" type="radio">
-<label for="radio">Option B</label>
+                <div class="option"><input id="option_b" name="radio" type="radio">
+<label for="option_b">Option B</label>
 </div>
-                <div class="option yolo"><input id="option_c" name="radio" type="radio">
-<label for="radio">Option C</label>
+                <div class="option"><input id="option_c" name="radio" type="radio">
+<label for="option_c">Option C</label>
 </div>
-                <div class="option yolo"><input id="option_d" name="radio" type="radio">
-<label for="radio">Option D</label>
+                <div class="option"><input id="option_d" name="radio" type="radio">
+<label for="option_d">Option D</label>
 </div>
-                <div class="option yolo"><input id="option_d" name="radio" type="radio">
-<label for="radio">Option D</label>
+                <div class="option"><input id="option_d" name="radio" type="radio">
+<label for="option_d">Option D</label>
 </div>
-                <div class="option yolo"><input id="option_f" name="radio" type="radio">
-<label for="radio">Option F</label>
+                <div class="option"><input id="option_f" name="radio" type="radio">
+<label for="option_f">Option F</label>
 </div>
-                <div class="option yolo"><input id="option_g" name="radio" type="radio">
-<label for="radio">Option G</label>
+                <div class="option"><input id="option_g" name="radio" type="radio">
+<label for="option_g">Option G</label>
 </div>
-                <div class="option yolo"><input id="option_h" name="radio" type="radio">
-<label for="radio">Option H</label>
+                <div class="option"><input id="option_h" name="radio" type="radio">
+<label for="option_h">Option H</label>
 </div>
       </div>
 </fieldset>
@@ -424,7 +426,8 @@
 
   <section>
     <h2>Resource List</h2>
-    <select name="options" id="options">
+    <label for="resource-list">Resource List</label>
+<select name="resource-list" id="resource-list">
   <option value=""></option>            <option  value="modx">MODX</option>
           <option  value="wordpress">Wordpress</option>
           <option  value="joomla!">Joomla!</option>
