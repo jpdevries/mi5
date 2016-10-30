@@ -1,5 +1,26 @@
+{% if not allowBlank|default(true) %}
+  {% set allowBlank = false %}
+  {% set required = false %}
+{% else %}
+  {% set allowBlank = true %}
+  {% set required = true %}
+{% endif %}
+
+{% if options.length %}
+  {% set list = "email_list" %}
+{% else %}
+  {% set list = undefined %}
+{% endif %}
+
 <label for="email">Email</label>
-<input type="email" name="email" id="email"{% if options.length %} list="email_list"{% endif %}{% if not allowBlank|default(true) %} required{% endif %}{% if maxLength %} maxLength="{{maxLength}}"{% endif %}>
+{% include './../twag/input.twig' with {
+  type:'email',
+  name:'email',
+  id:'email',
+  list:list,
+  required:required,
+  maxLength:maxLength
+} %}
 {% if options.length %}
   <datalist id="email_list">
   {% for option in options %}

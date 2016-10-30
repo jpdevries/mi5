@@ -1,6 +1,26 @@
-<label for="website">Website</label>
-<input type="url" name="website" id="website"{% if options.length %} list="url_list"{% endif %}{% if not allowBlank|default(true) %} required{% endif %}>
+{% if not allowBlank|default(true) %}
+  {% set allowBlank = false %}
+  {% set required = false %}
+{% else %}
+  {% set allowBlank = true %}
+  {% set required = true %}
+{% endif %}
+
 {% if options.length %}
+  {% set list = "url_list" %}
+{% else %}
+  {% set list = undefined %}
+{% endif %}
+
+<label for="website">Website</label>
+{% include './../twag/input.twig' with {
+  type:"url",
+  name:"website",
+  id:"website",
+  list:list,
+  required:required
+} %}
+{% if list %}
   <datalist id="url_list">
   {% for option in options %}
     <option>{{option.title}}</option>
