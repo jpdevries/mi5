@@ -9,7 +9,7 @@
   {% set required = true %}
 {% endif %}
 
-<label for="quantity">Quantity</label>
+<label for="{{id|default("number")}}">Quantity</label>
 {% include './../twag/input.twig' with {
   type:"number",
   id:id|default("number"),
