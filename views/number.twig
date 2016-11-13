@@ -12,8 +12,8 @@
 <label for="quantity">Quantity</label>
 {% include './../twag/input.twig' with {
   type:"number",
-  id:"quantity",
-  name:"quantity",
+  id:id|default("number"),
+  name:name|default("number"),
   min:min,
   max:max
 } %}
