@@ -252,6 +252,6 @@
     <option value="ZM">Zambia</option>
     <option value="ZW">Zimbabwe</option>
   </select>
-  {% if not forceSelectionToList %}<p>If other please specify:</p>{% endif %}
 {% if not forceSelectionToList %}</datalist>{% endif %}
+{% if not forceSelectionToList %}<p>If other please specify:</p>{% endif %}
 {% if not forceSelectionToList %}<input type="text" id="listbox-single" name="listbox-single" list="listbox-single__list"{% if not allowBlank|default(true) %} required{% endif %} />{% endif %}
